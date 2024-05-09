@@ -15,8 +15,7 @@
 
                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
                 </span>
@@ -29,12 +28,12 @@
                 {{ __('Manage Account') }}
             </div>
 
-            <x-dropdown-link href="{{ route('profile.show') }}">
+            <x-dropdown-link wire:navigate href="{{ route('profile.show') }}">
                 {{ __('Profile') }}
             </x-dropdown-link>
 
             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                <x-dropdown-link href="{{ route('api-tokens.index') }}">
+                <x-dropdown-link wire:navigate href="{{ route('api-tokens.index') }}">
                     {{ __('API Tokens') }}
                 </x-dropdown-link>
             @endif
@@ -45,7 +44,7 @@
             <form method="POST" action="{{ route('logout') }}" x-data>
                 @csrf
 
-                <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                <x-dropdown-link wire:navigate href="{{ route('logout') }}" @click.prevent="$root.submit();">
                     {{ __('Log Out') }}
                 </x-dropdown-link>
             </form>
