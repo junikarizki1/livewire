@@ -2,7 +2,7 @@
 <div class="">
     <a href="#">
         <div>
-            <img class="w-full rounded-xl" src="{{ $post->image }}">
+            <img class="w-full rounded-xl" src="{{ $post->getThumbnailImage() }}">
         </div>
     </a>
     <div class="mt-3">
@@ -15,6 +15,6 @@
             </a>
             <p class="text-gray-500 text-sm">{{ $post->published_at }}</p>
         </div>
-        <a class="text-xl font-bold text-gray-900">{{$post->title}}</a>
+        <a class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
     </div>
 </div>
