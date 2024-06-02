@@ -51,11 +51,10 @@ class PostResource extends Resource
                 )->columns(2),
                 Section::make('Meta')->schema(
                     [
-                        TextInput::make('user_id')->maxLength(3),
                         FileUpload::make('image')->image()->directory('posts/thumbnails'),
                         DateTimePicker::make('published_at')->nullable(),
                         Checkbox::make('featured'),
-                        Select::make('author')
+                        Select::make('user_id')
                             ->relationship('author', 'name')
                             ->searchable()
                             ->required(),
